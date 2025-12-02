@@ -2,18 +2,21 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     display: flex;
+    flex-direction: column; /* 垂直排列，为footer留出空间 */
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #f4f7f9; /* 稍微偏灰的背景，让白色卡片更突出 */
+    padding: 20px 0; /* 给上下留出一些空间 */
+    background-color: #f4f7f9;
+    box-sizing: border-box;
 }
 
 /* 转换器主容器 */
 .converter-container {
-    background-color: #ffffff; /* 要求的白色背景 */
+    background-color: #ffffff;
     padding: 25px;
-    border-radius: 15px; /* 圆角风格 */
+    border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     width: 90%;
     max-width: 400px;
@@ -39,7 +42,7 @@ h1 {
 .currency-rows {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* 行之间的间距 */
+    gap: 15px;
 }
 
 /* 单个货币行 */
@@ -49,27 +52,53 @@ h1 {
     gap: 10px;
 }
 
-.currency-code {
+/* 新增：货币选择区域的样式 */
+.currency-selector {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 85px; /* 固定宽度，让输入框对齐 */
+    cursor: pointer;
+    position: relative;
+}
+
+/* 新增：下拉选择框的样式 */
+.currency-select {
+    width: 100%;
+    padding: 8px 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
     font-weight: bold;
-    color: #555;
-    width: 50px; /* 固定宽度，让输入框对齐 */
+    color: #333;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-align: center;
+}
+.currency-select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
 }
 
 /* 金额输入框 */
 .currency-input {
-    flex-grow: 1; /* 占据剩余空间 */
+    flex-grow: 1;
     padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 8px; /* 圆角 */
+    border-radius: 8px;
     font-size: 1.1em;
     outline: none;
     transition: border-color 0.3s, box-shadow 0.3s;
     text-align: right;
-    -moz-appearance: textfield; /* 隐藏 Firefox 的数字输入框箭头 */
+    -moz-appearance: textfield;
 }
 .currency-input::-webkit-outer-spin-button,
 .currency-input::-webkit-inner-spin-button {
-    -webkit-appearance: none; /* 隐藏 Chrome/Safari 的数字输入框箭头 */
+    -webkit-appearance: none;
     margin: 0;
 }
 .currency-input:focus {
@@ -83,16 +112,21 @@ h1 {
     border: none;
     background-color: #6c757d;
     color: white;
-    border-radius: 8px; /* 圆角 */
+    border-radius: 8px;
     cursor: pointer;
     font-size: 0.9em;
     transition: background-color 0.3s;
 }
-
 .reset-btn:hover {
     background-color: #5a6268;
 }
-
 .reset-btn:active {
     transform: scale(0.98);
+}
+
+/* 新增：页脚样式 */
+.footer {
+    margin-top: 25px;
+    font-size: 0.8em;
+    color: #aaa;
 }

@@ -1,0 +1,98 @@
+/* 全局样式 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f7f9; /* 稍微偏灰的背景，让白色卡片更突出 */
+}
+
+/* 转换器主容器 */
+.converter-container {
+    background-color: #ffffff; /* 要求的白色背景 */
+    padding: 25px;
+    border-radius: 15px; /* 圆角风格 */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+#last-updated {
+    text-align: center;
+    color: #888;
+    font-size: 0.8em;
+    margin-bottom: 25px;
+}
+
+/* 货币行容器 */
+.currency-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* 行之间的间距 */
+}
+
+/* 单个货币行 */
+.currency-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.currency-code {
+    font-weight: bold;
+    color: #555;
+    width: 50px; /* 固定宽度，让输入框对齐 */
+}
+
+/* 金额输入框 */
+.currency-input {
+    flex-grow: 1; /* 占据剩余空间 */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* 圆角 */
+    font-size: 1.1em;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    text-align: right;
+    -moz-appearance: textfield; /* 隐藏 Firefox 的数字输入框箭头 */
+}
+.currency-input::-webkit-outer-spin-button,
+.currency-input::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* 隐藏 Chrome/Safari 的数字输入框箭头 */
+    margin: 0;
+}
+.currency-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+/* 重置按钮 */
+.reset-btn {
+    padding: 10px 15px;
+    border: none;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 8px; /* 圆角 */
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+
+.reset-btn:hover {
+    background-color: #5a6268;
+}
+
+.reset-btn:active {
+    transform: scale(0.98);
+}
